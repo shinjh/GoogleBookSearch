@@ -19,6 +19,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "GOOGLE_API_KEY", "\"AIzaSyD5QBLqxdtlYz0k-JdB6PMo_KPnSx5M_gY\"")
     }
 
     buildTypes {
@@ -33,6 +34,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions.freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
     }
 }
 
@@ -54,6 +58,12 @@ dependencies {
     implementation "androidx.startup:startup-runtime:$rootProject.startup"
     kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
     implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
+
+    // rx
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlin"
+
 
     // network
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"

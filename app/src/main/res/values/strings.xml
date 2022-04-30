@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GoogleBookSearch</string>
+
+    <string name="retry">재시도</string>
+    <string name="ok">확인</string>
+    <string name="error">에러 발생</string>
+    <string name="search_bar_hint">책 이름을 입력하세요</string>
+    <string name="price_format">%,d원</string>
 </resources>
